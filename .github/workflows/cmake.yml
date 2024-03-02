@@ -20,9 +20,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout picow-blink
+      uses: actions/checkout@v4
+      with:
+        path: picow-blink
 
     - name: Checkout pico-sdk/develop
+      uses: actions/checkout@v4
       with:
         repository: raspberrypi/pico-sdk
         ref: develop
