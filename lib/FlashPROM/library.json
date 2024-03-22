@@ -1,0 +1,13 @@
+{
+	"name": "FlashPROM",
+	"version": "0.0.1",
+	"description": "Basic EEPROM-like interface for saving to flash memory on the RP2040.",
+	"keywords": "pico rp2040 eeprom data storage",
+	"authors": [
+		{
+			"name": "Ivan Grokhotkov",
+			"url": "https://arduino-pico.readthedocs.io/en/latest/eeprom.html"
+		}
+	],
+	"license": "LGPL"
+}
