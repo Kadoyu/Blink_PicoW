@@ -27,7 +27,8 @@
 #include "hardware/flash.h"
 #include "hardware/sync.h"
 
-#define EEPROM_ADDRESS_START _u(0x101FC000)
+#define EEPROM_ADDRESS_START _u(0x1F0000)
+//#define EEPROM_ADDRESS_START _u(0x101FC000)
 
 class EEPROMClass {
 public:

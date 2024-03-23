@@ -22,7 +22,7 @@ int main()
     }
 
     EEPROM.begin(size);
-    count = EEPROM.read(0);
+    count = EEPROM.read(addr);
     std::cout << "Read Data " << count << std::endl;
 
     while (true)
@@ -54,7 +54,7 @@ int main()
                 printf("ERROR! EEPROM reset failed\n");
             }
         }
-        count = EEPROM.read(0);
+        count = EEPROM.read(addr);
         count++;
     }
 
