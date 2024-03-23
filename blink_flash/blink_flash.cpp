@@ -1,6 +1,6 @@
 /**
  * 30回Lチカしたらメモリリセットします。
- * 不揮発メモリに設定値を保存するため切断してもその前の数字から始まります。
+ * 不揮発メモリに設定値を保存するため切断してもその数字から始まります。
  * メモリはBlock31 先頭セクタ(1F0000)の4kByteを使用します。
  */
 #include <iostream>
@@ -34,24 +34,26 @@ int main()
         sleep_ms(250);
         std::cout << "Blink Count: " << count << std::endl;
 
-        if (EEPROM.commit())
-        {
-            printf("EEPROM successfully comitted\n");
-        }
-        else
-        {
-            printf("ERROR! EEPROM commit failed\n");
-        }
-
         if (count >= 30)
         {
             if (EEPROM.reset())
             {
-                printf("EEPROM successfully reset\n");
+                printf("RESET!!\n");
             }
             else
             {
                 printf("ERROR! EEPROM reset failed\n");
+            }
+        }
+        else
+        {
+            if (EEPROM.commit())
+            {
+                printf("EEPROM successfully comitted\n");
+            }
+            else
+            {
+                printf("ERROR! EEPROM commit failed\n");
             }
         }
         count = EEPROM.read(addr);

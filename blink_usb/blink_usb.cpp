@@ -7,7 +7,7 @@
 #include "pico/cyw43_arch.h"
 int main()
 {
-    int interval;
+    int interval = 0;
 
     stdio_init_all();
 
@@ -20,7 +20,7 @@ int main()
     while (true)
     {
         //scanf("%d", &interval);
-        std::cout << "Enter a number: ";
+        std::cout << "Enter a number: " << std::endl;
         std::cin >> interval;
 
         while (interval != 0)
